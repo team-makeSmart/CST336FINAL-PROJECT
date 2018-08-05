@@ -1,1 +1,1 @@
-<?php include_once("store/index.php"); ?>
+<?php header("Location:store/index.php"); ?>
