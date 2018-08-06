@@ -86,7 +86,6 @@ if (!isset($_SESSION['adminName'])) {
                     <form action='addProduct.php'>
                         <button type='submit' class='btn btn-success' id='beginning' name='addProduct' value='Add Product'>Add Product</button>
                         <input type='submit' style='float:right;' class='btn btn-warning' id='beginning' name='logOut' value='  Log Out  '/>
-                        
                     </form>
                  </div>";
 
@@ -158,10 +157,6 @@ if (!isset($_SESSION['adminName'])) {
                     url: "aggregateFunc.php",
                     success: function (data) {
                         json = JSON.parse(data);
-
-                        // var sum = json.sum;
-                        // var avg = json.avg;
-                        // var max = json.max;
 
                         displayResult(json);
 

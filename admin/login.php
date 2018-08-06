@@ -46,13 +46,16 @@
                         <button type="submit" style="background-color:#043308;" class = 'btn btn-primary' name="submitForm" value="Login!" />Login</button>
                     </div>
                 </div>
-        </div>
+       
         <?php
         if ($_SESSION['incorrect']) {
             echo "<p class 'lead' id = 'error' style='color:red;'>";
             echo "<strong>Incorrect Username or Password</strong></p>";
         }
         ?>
+        
+        </div>
+        
         <script>
             $(document).ready(function () {
                 $("button").addClass("animated bounce");
