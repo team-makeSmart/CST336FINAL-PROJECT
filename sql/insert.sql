@@ -8,7 +8,7 @@
 INSERT INTO `admin` (`idadmin`, `username`, `password`) VALUES ('1', 'admin', SHA1('secret'));
 
 -- Create a user account
-INSERT INTO `customer` (`idcustomer`, `firstName`, `lastName`, `password`, `address`) VALUES ('1', ' Seymour', 'Krelborn', SHA1('secret'), 'sk@apple.com');
+INSERT INTO `customer` (`idcustomer`, `firstName`, `lastName`, `address`) VALUES ('1', ' Seymour', 'Krelborn', 'sk@apple.com');
 
 -- Create a few plants
 -- All images and plant info retrieved 08-04-18 from https://en.wikipedia.org/wiki/List_of_poisonous_plants
