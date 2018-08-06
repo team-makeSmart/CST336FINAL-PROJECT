@@ -224,7 +224,9 @@ if (!isset($_SESSION['adminName'])) {
     }
 
     $_SESSION['prodAdded'] = '';
+ 
+    include '../php/footer.php';  //includes the footer
     ?>
-
+ 
 </html>
 
