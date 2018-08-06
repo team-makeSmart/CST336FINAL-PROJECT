@@ -33,7 +33,6 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `idcustomer` INT(11) NOT NULL AUTO_INCREMENT,
   `firstName` VARCHAR(25) NULL DEFAULT ' ',
   `lastName` VARCHAR(25) NULL DEFAULT ' ',
-  `password` VARCHAR(40) NOT NULL,
   `address` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idcustomer`),
   UNIQUE INDEX `address_UNIQUE` (`address` ASC))
