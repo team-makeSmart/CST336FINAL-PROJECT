@@ -37,7 +37,7 @@ if (!isset($_SESSION['adminName'])) {
         
         <div class='container'>
           <div class="dropdown">
-            <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">OPTIONS
+            <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">REPORTS
                 <span class="caret"></span></button>
             <ul class="dropdown-menu">
                 <li><a id="avg">AVG  PRICE</a></li>
