@@ -63,11 +63,9 @@ img:hover {
 .btn-info dropdown-toggle {
  float: right;
  margin-top: 10px;
- margin-right: -10px;
+ margin-right: 35px;
 }
 
-/*.dropdown-menu li{*/
-
-/*    background-color: #5bc0de;*/
-
-/*}*/
+#beginning{
+ margin-bottom: 10px;
+}
