@@ -1,12 +1,27 @@
 <?php
     session_start();
     
+    include '../dbConnection.php';
+    
+    $conn = getDatabaseConnection("plantdb");
+    
     // Reset the search fields when navigating back to the home page
     unset($_SESSION['search-box']);
     unset($_SESSION['order-by']);
     unset($_SESSION['search-by']);
     unset($_SESSION['priceFrom']);
     unset($_SESSION['priceTo']);
+    
+    function getPlants() {
+        global $conn;
+      
+        $sql = "SELECT * FROM plant";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $records = $stmt ->fetchAll(PDO::FETCH_ASSOC);
+
+        return $records;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,53 +45,40 @@
         <?php
           include 'navbar.php';
           
-          $plantImages = ['nightshade-lg.jpg', 'poisonoak-lg.png', 'venus-lg.jpg'];
+          $plants = getPlants();
         ?>
         
-        <br><br>
+        <br><br><br><br>
         
-            
+        <div class="text-center">
             <div id="plantCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#plantCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#plantCarousel" data-slide-to="1"></li>
-                <li data-target="#plantCarousel" data-slide-to="2"></li>
-              </ol>
               <div class="carousel-inner">
                 <?php
-                    for ($i = 0; $i < count($plantImages); $i++) {
+                    for ($i = 0; $i < count($plants); $i++) {
                         echo "<div class='carousel-item";
                         echo ($i == 0) ? " active" : "";
                         echo "'>";
-                        echo "<img src='../img/".$plantImages[$i]."'>";
+                        echo "<img src='../".$plants[$i]['imgLink']."'>";
                         echo "</div>";
                     }
                 ?>
               </div>
-              <a class="carousel-control-prev" href="#plantCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#plantCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
             </div>
+        </div>
 
         
-        <br><br>
+        <br><br><br><br>
         
-
-
-
- <script language="javascript" type="text/javascript" src="inc/functions.js"></script>
-    </body>
-    <?php
-        include '../php/footer.php';  //includes the footer
-    ?>        
+        <div class="text-center">
+          <div id="intro-text" class="card bg-light d-inline-block p-4">
+            Welcome to the Teeny Shop of Horrors. <br>
+            We offer a unique selection of deadly, toxic, and carnivorous plants. <br>
+            Proceed at your own risk.
+          </div>
+        </div>
+        
+        <br><br><br>
+        
     <script language="javascript" type="text/javascript" src="inc/functions.js"></script>
     </body>
-    <?php
-        include '../php/footer.php';  //includes the footer
-    ?>
 </html>

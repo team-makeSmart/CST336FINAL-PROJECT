@@ -130,7 +130,7 @@
                 </div>
                 
                 <?php checkIsSet('address') ?>   
-                <input type="text" class="form-control" placeholder="Address" name="address" value="<?php repop('address') ?>"><br>
+                <input type="text" class="form-control" placeholder="E-mail Adress (e.g. janedoe@csumb.edu)" name="address" value="<?php repop('address') ?>"><br>
                 
                 <div class="text-center">
                    <input type="submit" name=confirm-purchase class="btn btn-success" value="Confirm Purchase">
