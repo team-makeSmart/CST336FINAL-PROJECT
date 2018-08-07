@@ -7,7 +7,7 @@
         global $conn;
         $sql = "select round((sum(priceDollar)+(sum(priceCent)/100)),2) as sum,
                 round((AVG(priceDollar)+((priceCent)/100)),2) as avg,
-                cast(MAX(priceDollar) as decimal(10,2)) as max       
+                round(max(priceDollar+((priceCent)/100)),2) as max     
                 from plant ";
         
         $stmt = $conn->prepare($sql);
