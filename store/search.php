@@ -20,6 +20,7 @@
         $newPlant['plantDesc'] = $_POST['plantDesc'];
         $newPlant['priceDollar'] = $_POST['priceDollar'];
         $newPlant['priceCent'] = $_POST['priceCent'];
+        $newPlant['imgLink'] = $_POST['imgLink'];
         
         // Check to see if other items with this id are in the cart array
         // If so, only update the quantity
@@ -87,6 +88,7 @@
         echo "<table class='table table-hover'>";
         echo "<thead>
                 <tr>
+                    <th scope='col'>Image</th>
                     <th scope='col'>Plant Name</th>
                     <th scope='col'>Description</th>
                     <th scope='col'>Price</th>
@@ -96,6 +98,7 @@
         echo "<tbody>";
         foreach($records as $record) {
             echo "<tr>";
+            echo "<td><img src='../".$record['imgLink']."'></td>";
             echo "<td>".$record['plantName']."</td>";
             echo "<td>".$record['plantDesc']."</td>";
             echo "<td>$".$record['priceDollar'].".".$record['priceCent']."</td>";
@@ -107,6 +110,7 @@
             echo "<input type='hidden' name='plantDesc' value='".$record['plantDesc']."'/>";
             echo "<input type='hidden' name='priceDollar' value='".$record['priceDollar']."'/>";
             echo "<input type='hidden' name='priceCent' value='".$record['priceCent']."'/>";
+            echo "<input type='hidden' name='imgLink' value='".$record['imgLink']."'/>";
             
             // Check to see if the most recent POST request has the same itemId
             // If so, display a differnt button

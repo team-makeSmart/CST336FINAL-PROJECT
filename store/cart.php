@@ -25,12 +25,12 @@
             echo "<table class='table table-hover'>";
             echo "<thead>
                     <tr>
+                        <th scope='col'>Image</th>
                         <th scope='col'>Plant Name</th>
                         <th scope='col'>Description</th>
                         <th scope='col'>Unit Price</th>
                         <th scope='col'>Quantity</th>
                         <th scope='col'>Sub Total</th>
-                        <th scope='col'> </th>
                         <th scope='col'> </th>
                     </tr>
                   </thead>";
@@ -39,6 +39,7 @@
                 
                 // Display item as table row
                 echo "<tr>";
+                echo "<td><img src='../".$plant['imgLink']."'></td>";
                 echo "<td>".$plant['plantName']."</td>";
                 echo "<td>".$plant['plantDesc']."</td>";
                 echo "<td>$".$plant['priceDollar'].".".$plant['priceCent']."</td>";
@@ -48,13 +49,14 @@
                 echo "<input type='hidden' name='updateId' value='".$plant['idplant']."'/>";
                 echo "<td><input type='text' name='update' class='form-control quantity-entry' value='".$plant['quantity']."'/></td>";
                 echo "<td>$".($plant['priceDollar']+$plant[priceCent]/100)*$plant['quantity']."</td>";
-                echo "<td><button class='btn btn-warning'>Update</button></td>";
+                echo "<td><button class='btn btn-warning'>Update</button>";
                 echo "</form>";
+                echo "<br><br>";
                 
                 // Hidden input element containing the item name
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='removeId' value='".$plant['idplant']."'>";
-                echo "<td><button class='btn btn-warning'>Remove</button></td>";
+                echo "<button class='btn btn-warning'>Remove</button></td>";
                 echo "</form>";
                 
                 echo "</tr>";
