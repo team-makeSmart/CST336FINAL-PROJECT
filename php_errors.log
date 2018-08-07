@@ -37,3 +37,8 @@
 [05-Aug-2018 20:45:54 UTC] PHP   2. displaySummery() /home/ubuntu/workspace/cst336/CST336FINAL/store/checkout.php:117
 [05-Aug-2018 21:03:55 UTC] PHP Parse error:  syntax error, unexpected '$img' (T_VARIABLE), expecting ',' or ';' in /home/ubuntu/workspace/cst336/CST336FINAL/admin/admin.php on line 138
 [05-Aug-2018 21:04:03 UTC] PHP Parse error:  syntax error, unexpected '$img' (T_VARIABLE), expecting ',' or ';' in /home/ubuntu/workspace/cst336/CST336FINAL/admin/admin.php on line 138
+[06-Aug-2018 04:12:56 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'plantDesc' cannot be null' in /home/ubuntu/workspace/cst336/CST336FINAL/admin/addProduct.php:39
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/CST336FINAL/admin/addProduct.php(39): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/CST336FINAL/admin/addProduct.php on line 39

@@ -66,9 +66,14 @@
         
         <br><br>
         
-        
 
-    
+
+
+ <script language="javascript" type="text/javascript" src="inc/functions.js"></script>
+    </body>
+    <?php
+        include '../php/footer.php';  //includes the footer
+    ?>        
     <script language="javascript" type="text/javascript" src="inc/functions.js"></script>
     </body>
     <?php

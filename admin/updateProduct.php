@@ -24,8 +24,16 @@
     if (isset($_GET['updateProduct'])) {
         
         if($_GET['imgLink']==null){
-           $_GET['imgLink']="https://www.jainsusa.com/images/store/landscape/not-available.jpg";
+           $_GET['imgLink']="img/noImg.jpg";
         }
+        if ($_GET['plantName']==null){
+              $message = "No name provided";
+              echo "<script type='text/javascript'>alert('$message');</script>";
+          }if(is_numeric($_GET['priceDollar'])==false ||is_numeric($_GET['priceCent']==false)){
+              $message = "Please enter numeric values for prices";
+              echo "<script type='text/javascript'>alert('$message');</script>";
+          }
+          else{
          
         $conn = getDatabaseConnection();
         
@@ -51,6 +59,7 @@
         $stmt->execute($np);
                 
         header('Location:admin.php');
+    }
 }
 ?>
 
@@ -93,7 +102,8 @@
                    
                     <strong>Set Image Url</strong><input type="text" name = "imgLink" class="form-control" value="<?=$plant['imgLink']?>"><br>
                     <input type="submit"  name="updateProduct"  class="btn btn-primary" value="Update Product">
-                    
+                    <a href="admin.php" class="btn btn-warning pull-right" >Cancel</a>
+
                 </form>
             </div>
         </div>
